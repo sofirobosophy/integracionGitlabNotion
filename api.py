@@ -130,5 +130,9 @@ def actualizar_pagina_notion(page_id, title, description, url, assignee, created
     response = requests.patch(notion_url, headers=NOTION_HEADERS, json=data)
     return response.status_code == 200
 
+@app.route("/")
+def home():
+    return "Hello, Render!"
+
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
